@@ -1,0 +1,44 @@
+#app {
+    margin-top: 24px;
+}
+
+#myTab > .nav-item {
+    color: #6db766;
+    background-color: white;
+
+}
+#myTab > .nav-item.active {
+    background-color: #6db766;
+    color: white;
+}
+
+#myTabContent table tr.base-point > td:nth-child(1) {
+    background-color: rgb(83, 176, 226);
+    color: white;
+}
+
+#myTabContent table tr.bonus-point > td:nth-child(1) {
+    background-color: rgb(228, 123, 77);
+    color: white;
+}
+
+#myTabContent > .tab-pane > table > tfoot > tr > td:not(:first-of-type) {
+    background-color: rgb(51, 118, 184);
+    color: white;
+}
+
+[class^=score-], [class*=' score-'] {
+    cursor: pointer;
+}
+
+[class^=score-]:hover, [class*=' score-']:hover {
+    /* TODO */
+}
+
+[class^=score-].selected, [class*=' score-'].selected {
+    background-color: yellow;
+}
+
+.annotation {
+    cursor: pointer;
+}

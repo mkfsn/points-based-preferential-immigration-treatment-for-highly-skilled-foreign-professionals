@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Points-based Preferential Immigration Treatment for Highly-Skilled Foreign Professionals</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">高度人材ポイント制による出入国管理上の優遇制度</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-0 ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            外部リンク
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" target="_blank" href="http://www.immi-moj.go.jp/newimmiact_3/pdf/h29_06_point-hyou.pdf">リーフレット</a>
+                            <a class="dropdown-item" target="_blank" href="http://www.immi-moj.go.jp/newimmiact_3/en/pdf/171110_leaflet.pdf">leaflet</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app" class="container">
+        <h2 class="text-center">《ポイント計算表》</h2>
+        <nav class="nav nav-pills nav-fill" id="myTab" role="tablist">
+            <a class="nav-item nav-link" data-toggle="tab" href="#academic" aria-controls="academic" aria-selected="true">
+                高度学術研究分野
+            </a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#specialized" aria-controls="specialized" >
+                高度専門・技術分野
+            </a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#business" aria-controls="business">
+                高度経営・管理分野
+            </a>
+        </nav>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="academic" role="tabpanel" aria-labelledby="home-tab">
+                <table class="table table-bordered justify-content-center">
+                    <tbody>
+                    <tr class="base-point">
+                        <td rowspan="4" class="align-middle text-center">学歴</td>
+                        <td>博士号（専門職に係る学位を除く。）取得者</td>
+                        <td class="score-education">30</td>
+                    </tr>
+                    <tr>
+                        <td>修士号（専門職に係る博 士を含む。）取得者</td>
+                        <td class="score-education">20</td>
+                    </tr>
+                    <tr>
+                        <td>大学を卒業し又はこれと同等以上の教育を受けた者（博士号又は修士号取得者を除く。）</td>
+                        <td class="score-education">10</td>
+                    </tr>
+                    <tr>
+                        <td>複数の分野において，博士号，修士号又は専門職学位を有している者</td>
+                        <td class="score-education">5</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="3" class="align-middle text-center">
+                            職歴<br>
+                            （実務経験）<br>
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="従事しようとする業務に係る実務経験に限る。">（注１）</span>
+                        </td>
+                        <td>７年～</td>
+                        <td class="score-year-experience">15</td>
+                    </tr>
+                    <tr>
+                        <td>５年～</td>
+                        <td class="score-year-experience">10</td>
+                    </tr>
+                    <tr>
+                        <td>３年～</td>
+                        <td class="score-year-experience">5</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td class="align-middle text-center">
+                            年収<br>
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="※１主たる受入機関から受ける報酬の年額　※２海外の機関からの転勤の場合には，当該機関から受ける報酬の年額を算入 ※３賞与（ボーナス）も年収に含まれる。">（注２）</span>
+                        </td>
+                        <td colspan="2" class="p-0">
+                            <table class="table mb-0">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>～29歳</th>
+                                    <th>～34歳</th>
+                                    <th>～39歳</th>
+                                    <th>40歳～</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>１０００万円</th>
+                                    <td class="score-annual-income">40</td>
+                                    <td class="score-annual-income">40</td>
+                                    <td class="score-annual-income">40</td>
+                                    <td class="score-annual-income">40</td>
+                                </tr>
+                                <tr>
+                                    <th>９００万円</th>
+                                    <td class="score-annual-income">35</td>
+                                    <td class="score-annual-income">35</td>
+                                    <td class="score-annual-income">35</td>
+                                    <td class="score-annual-income">35</td>
+                                </tr>
+                                <tr>
+                                    <th>８００万円</th>
+                                    <td class="score-annual-income">30</td>
+                                    <td class="score-annual-income">30</td>
+                                    <td class="score-annual-income">30</td>
+                                    <td class="score-annual-income">30</td>
+                                </tr>
+                                <tr>
+                                    <th>７００万円</th>
+                                    <td class="score-annual-income">25</td>
+                                    <td class="score-annual-income">25</td>
+                                    <td class="score-annual-income">25</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                <tr>
+                                    <th>６００万円</th>
+                                    <td class="score-annual-income">20</td>
+                                    <td class="score-annual-income">20</td>
+                                    <td class="score-annual-income">20</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                <tr>
+                                    <th>５００万円</th>
+                                    <td class="score-annual-income">15</td>
+                                    <td class="score-annual-income">15</td>
+                                    <td class="disabled">-</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                <tr>
+                                    <th>４００万円</th>
+                                    <td class="score-annual-income">10</td>
+                                    <td class="disabled">-</td>
+                                    <td class="disabled">-</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="3" class="align-middle text-center">年齢</td>
+                        <td>～２９歳</td>
+                        <td class="score-age">15</td>
+                    </tr>
+                    <tr>
+                        <td>～３４歳</td>
+                        <td class="score-age">10</td>
+                    </tr>
+                    <tr>
+                        <td>～３９歳</td>
+                        <td class="score-age">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス①<br>〔研究実績〕</td>
+                        <td>詳細は③参照</td>
+                        <td>20~25</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス②<br>〔地位〕</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス③</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス④</td>
+                        <td>
+                            イノベーションを促進するための支援措置（法務大臣が告示で定めるもの）を受けている機関における就労
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="就労する機関が中小企業である場合には，別途１０点の加点">（注３）</span>
+                        </td>
+                        <td class="score-bonus-4">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑤</td>
+                        <td>試験研究費等比率が３％超の中小企業における就労</td>
+                        <td class="score-bonus-5">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑥</td>
+                        <td>職務に関連する外国の資格等</td>
+                        <td class="score-bonus-6">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑦</td>
+                        <td>本邦の高等教育機関において学位を取得</td>
+                        <td class="score-bonus-7">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑧</td>
+                        <td>
+                            日本語能力試験Ｎ１取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="同等以上の能力を試験（例えば，ＢＪＴビジネス日本語能力テストにおける４８０点以上の得点）により認められている者も含む。">（注４）</span>
+                            又は外国の大学において日本語を専攻して卒業した者</td>
+                        <td class="score-bonus-8">15</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑨</td>
+                        <td>
+                            日本語能力試験Ｎ２取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="同等以上の能力を試験（例えば，ＢＪＴビジネス日本語能力テストにおける４００点以上の得点）により認められている者も含む。">（注５）</span>
+                            （ボーナス⑦又は⑧のポイントを獲得した者を除く。）</td>
+                        <td class="score-bonus-9 score-bonus-7 score-bonus-8">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑩</td>
+                        <td>成長分野における先端的事業に従事する者（法務大臣が認める事業に限る。）</td>
+                        <td class="score-bonus-10">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑪</td>
+                        <td>法務大臣が告示で定める大学を卒業した者</td>
+                        <td class="score-bonus-11">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑫</td>
+                        <td>
+                            法務大臣が告示で定める研修を修了した者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="本邦の高等教育機関における研修については，ボーナス⑦のポイントを獲得した者を除く。">（注６）</span>
+                        </td>
+                        <td class="score-bonus-12">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑬</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>得点 / 合格点</td>
+                        <td style="width: 9ch;">
+                            <span class="total-score">0</span> / 70
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="specialized" role="tabpanel" aria-labelledby="profile-tab">
+                <table class="table table-bordered justify-content-center">
+                    <tbody>
+                    <tr class="base-point">
+                        <td rowspan="4" class="align-middle text-center" style="width: 13ch">学歴</td>
+                        <td>博士号（専門職に係る学位を除く。）取得者</td>
+                        <td class="score-education">30</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            修士号（専門職に係る博 士を含む。）取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="経営管理に関する専門職学位（ＭＢＡ，ＭＯＴ）を有している場合には，別途５点の加点">（注７）</span>
+                        </td>
+                        <td class="score-education">20</td>
+                    </tr>
+                    <tr>
+                        <td>大学を卒業し又はこれと同等以上の教育を受けた者（博士号又は修士号取得者を除く。）</td>
+                        <td class="score-education">10</td>
+                    </tr>
+                    <tr>
+                        <td>複数の分野において，博士号，修士号又は専門職学位を有している者</td>
+                        <td class="score-education">5</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="4" class="align-middle text-center">
+                            職歴<br>
+                            （実務経験）<br>
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="従事しようとする業務に係る実務経験に限る。">（注１）</span>
+                        </td>
+                        <td>１０年～</td>
+                        <td class="score-year-experience">20</td>
+                    </tr>
+                    <tr>
+                        <td>７年～</td>
+                        <td class="score-year-experience">15</td>
+                    </tr>
+                    <tr>
+                        <td>５年～</td>
+                        <td class="score-year-experience">10</td>
+                    </tr>
+                    <tr>
+                        <td>３年～</td>
+                        <td class="score-year-experience">5</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td class="align-middle text-center">
+                            年収<br>
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="※１主たる受入機関から受ける報酬の年額　※２海外の機関からの転勤の場合には，当該機関から受ける報酬の年額を算入 ※３賞与（ボーナス）も年収に含まれる。">（注２）</span>
+                        </td>
+                        <td colspan="2" class="p-0">
+                            <table class="table mb-0">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>～29歳</th>
+                                    <th>～34歳</th>
+                                    <th>～39歳</th>
+                                    <th>40歳～</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>１０００万円</th>
+                                    <td class="score-annual-income">40</td>
+                                    <td class="score-annual-income">40</td>
+                                    <td class="score-annual-income">40</td>
+                                    <td class="score-annual-income">40</td>
+                                </tr>
+                                <tr>
+                                    <th>９００万円</th>
+                                    <td class="score-annual-income">35</td>
+                                    <td class="score-annual-income">35</td>
+                                    <td class="score-annual-income">35</td>
+                                    <td class="score-annual-income">35</td>
+                                </tr>
+                                <tr>
+                                    <th>８００万円</th>
+                                    <td class="score-annual-income">30</td>
+                                    <td class="score-annual-income">30</td>
+                                    <td class="score-annual-income">30</td>
+                                    <td class="score-annual-income">30</td>
+                                </tr>
+                                <tr>
+                                    <th>７００万円</th>
+                                    <td class="score-annual-income">25</td>
+                                    <td class="score-annual-income">25</td>
+                                    <td class="score-annual-income">25</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                <tr>
+                                    <th>６００万円</th>
+                                    <td class="score-annual-income">20</td>
+                                    <td class="score-annual-income">20</td>
+                                    <td class="score-annual-income">20</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                <tr>
+                                    <th>５００万円</th>
+                                    <td class="score-annual-income">15</td>
+                                    <td class="score-annual-income">15</td>
+                                    <td class="disabled">-</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                <tr>
+                                    <th>４００万円</th>
+                                    <td class="score-annual-income">10</td>
+                                    <td class="disabled">-</td>
+                                    <td class="disabled">-</td>
+                                    <td class="disabled">-</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="3" class="align-middle text-center">年齢</td>
+                        <td>～２９歳</td>
+                        <td class="score-age">15</td>
+                    </tr>
+                    <tr>
+                        <td>～３４歳</td>
+                        <td class="score-age">10</td>
+                    </tr>
+                    <tr>
+                        <td>～３９歳</td>
+                        <td class="score-age">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td rowspan="4" class="align-middle text-center">ボーナス①<br>〔研究実績〕</td>
+                        <td>特許の発明１件～</td>
+                        <td rowspan="4" class="score-bonus-1 align-middle">15</td>
+                    </tr>
+                    <tr>
+                        <td>入国前に公的機関からグラントを受けた研究に従事した実績３件～</td>
+                    </tr>
+                    <tr>
+                        <td>研究論文の実績については，我が国の国の機関において利用されている学術論文データベースに登録されている学術雑誌に掲載されている論文（申請人が責任著者であるものに限る。）　３本～</td>
+                    </tr>
+                    <tr>
+                        <td>上記の項目以外で，上記項目におけるものと同等の研究実績があると申請人がアピールする場合（著名な賞の受賞歴等），関係行政機関の長の意見を聴いた上で法務大臣が個別にポイントの付与の適否を判断</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス②<br>〔地位〕</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス③</td>
+                        <td>職務に関連する日本の国家資格の保有（１つ５点）</td>
+                        <td class="score-bonus-3">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス④</td>
+                        <td>
+                            イノベーションを促進するための支援措置（法務大臣が告示で定めるもの）を受けている機関における就労
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="就労する機関が中小企業である場合には，別途１０点の加点">（注３）</span>
+                        </td>
+                        <td class="score-bonus-4">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑤</td>
+                        <td>試験研究費等比率が３％超の中小企業における就労</td>
+                        <td class="score-bonus-5">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑥</td>
+                        <td>職務に関連する外国の資格等</td>
+                        <td class="score-bonus-6">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑦</td>
+                        <td>本邦の高等教育機関において学位を取得</td>
+                        <td class="score-bonus-7">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑧</td>
+                        <td>
+                            日本語能力試験Ｎ１取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="同等以上の能力を試験（例えば，ＢＪＴビジネス日本語能力テストにおける４８０点以上の得点）により認められている者も含む。">（注４）</span>
+                            又は外国の大学において日本語を専攻して卒業した者</td>
+                        <td class="score-bonus-8">15</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑨</td>
+                        <td>
+                            日本語能力試験Ｎ２取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="同等以上の能力を試験（例えば，ＢＪＴビジネス日本語能力テストにおける４００点以上の得点）により認められている者も含む。">（注５）</span>
+                            （ボーナス⑦又は⑧のポイントを獲得した者を除く。）</td>
+                        <td class="score-bonus-9 score-bonus-7 score-bonus-8">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑩</td>
+                        <td>成長分野における先端的事業に従事する者（法務大臣が認める事業に限る。）</td>
+                        <td class="score-bonus-10">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑪</td>
+                        <td>法務大臣が告示で定める大学を卒業した者</td>
+                        <td class="score-bonus-11">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑫</td>
+                        <td>
+                            法務大臣が告示で定める研修を修了した者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="本邦の高等教育機関における研修については，ボーナス⑦のポイントを獲得した者を除く。">（注６）</span>
+                        </td>
+                        <td class="score-bonus-12">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑬</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>得点 / 合格点</td>
+                        <td style="width: 9ch;">
+                            <span class="total-score">0</span> / 70
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="contact-tab">
+                <table class="table table-bordered justify-content-center">
+                    <tbody>
+                    <tr class="base-point">
+                        <td rowspan="3" class="align-middle text-center">学歴</td>
+                        <td>
+                            博士号又は修士号取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="経営管理に関する専門職学位（ＭＢＡ，ＭＯＴ）を有している場合には，別途５点の加点">（注７）</span>
+                        </td>
+                        <td class="score-education">20</td>
+                    </tr>
+                    <tr>
+                        <td>大学を卒業し又はこれと同等以上の教育を受けた者（博士号又は修士号取得者を除く。）</td>
+                        <td class="score-education">10</td>
+                    </tr>
+                    <tr>
+                        <td>複数の分野において，博士号，修士号又は専門職学位を有している者</td>
+                        <td class="score-education">5</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="4" class="align-middle text-center">
+                            職歴<br>
+                            （実務経験）<br>
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="従事しようとする業務に係る実務経験に限る。">（注１）</span>
+                        </td>
+                        <td>１０年～</td>
+                        <td class="score-year-experience">25</td>
+                    </tr>
+                    <tr>
+                        <td>７年～</td>
+                        <td class="score-year-experience">20</td>
+                    </tr>
+                    <tr>
+                        <td>５年～</td>
+                        <td class="score-year-experience">15</td>
+                    </tr>
+                    <tr>
+                        <td>３年～</td>
+                        <td class="score-year-experience">10</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="5" class="align-middle text-center">
+                            年収<br>
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="※１主たる受入機関から受ける報酬の年額　※２海外の機関からの転勤の場合には，当該機関から受ける報酬の年額を算入 ※３賞与（ボーナス）も年収に含まれる。">（注２）</span>
+                        </td>
+                        <td>３０００万円～</td>
+                        <td class="score-annual-income">50</td>
+                    </tr>
+                    <tr>
+                        <td>２５００万円～</td>
+                        <td class="score-annual-income">40</td>
+                    </tr>
+                    <tr>
+                        <td>２０００万円～</td>
+                        <td class="score-annual-income">30</td>
+                    </tr>
+                    <tr>
+                        <td>１５００万円～</td>
+                        <td class="score-annual-income">20</td>
+                    </tr>
+                    <tr>
+                        <td>１０００万円～</td>
+                        <td class="score-annual-income">10</td>
+                    </tr>
+                    <tr class="base-point">
+                        <td rowspan="3" class="align-middle text-center">年齢</td>
+                        <td>～２９歳</td>
+                        <td class="score-age">15</td>
+                    </tr>
+                    <tr>
+                        <td>～３４歳</td>
+                        <td class="score-age">10</td>
+                    </tr>
+                    <tr>
+                        <td>～３９歳</td>
+                        <td class="score-age">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス①<br>〔研究実績〕</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td rowspan="2" class="align-middle text-center">ボーナス②<br>〔地位〕</td>
+                        <td>代表取締役，代表執行役</td>
+                        <td class="score-bonus-2">10</td>
+                    </tr>
+                    <tr>
+                        <td>取締役，執行役</td>
+                        <td class="score-bonus-2">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス③</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス④</td>
+                        <td>
+                            イノベーションを促進するための支援措置（法務大臣が告示で定めるもの）を受けている機関における就労
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="就労する機関が中小企業である場合には，別途１０点の加点">（注３）</span>
+                        </td>
+                        <td class="score-bonus-4">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑤</td>
+                        <td>試験研究費等比率が３％超の中小企業における就労</td>
+                        <td class="score-bonus-5">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑥</td>
+                        <td>職務に関連する外国の資格等</td>
+                        <td class="score-bonus-6">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑦</td>
+                        <td>本邦の高等教育機関において学位を取得</td>
+                        <td class="score-bonus-7">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑧</td>
+                        <td>
+                            日本語能力試験Ｎ１取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="同等以上の能力を試験（例えば，ＢＪＴビジネス日本語能力テストにおける４８０点以上の得点）により認められている者も含む。">（注４）</span>
+                            又は外国の大学において日本語を専攻して卒業した者</td>
+                        <td class="score-bonus-8">15</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑨</td>
+                        <td>
+                            日本語能力試験Ｎ２取得者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="同等以上の能力を試験（例えば，ＢＪＴビジネス日本語能力テストにおける４００点以上の得点）により認められている者も含む。">（注５）</span>
+                            （ボーナス⑦又は⑧のポイントを獲得した者を除く。）</td>
+                        <td class="score-bonus-9 score-bonus-7 score-bonus-8">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑩</td>
+                        <td>成長分野における先端的事業に従事する者（法務大臣が認める事業に限る。）</td>
+                        <td class="score-bonus-10">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑪</td>
+                        <td>法務大臣が告示で定める大学を卒業した者</td>
+                        <td class="score-bonus-11">10</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑫</td>
+                        <td>
+                            法務大臣が告示で定める研修を修了した者
+                            <span class="badge badge-secondary annotation" data-toggle="popover" data-content="本邦の高等教育機関における研修については，ボーナス⑦のポイントを獲得した者を除く。">（注６）</span>
+                        </td>
+                        <td class="score-bonus-12">5</td>
+                    </tr>
+                    <tr class="bonus-point">
+                        <td class="align-middle text-center">ボーナス⑬</td>
+                        <td>経営する事業に１億円以上の投資を行っている者</td>
+                        <td class="score-bonus-13">5</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>得点 / 合格点</td>
+                        <td style="width: 9ch;">
+                            <span class="total-score">0</span> / 70
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
