@@ -42,16 +42,11 @@ class App {
             const el = $(table).find(`.${key}:eq(${value})`);
             el.addClass("selected");
         });
+        this._recalculateTotalScore(table);
     }
 
     listenToScoreChanges() {
-        const recalculateTotalScore = () => {
-            let sum = 0;
-            $('[class^="score-"].selected').each(function () {
-                sum += parseInt($(this).text(), 10);
-            });
-            $(this).parents('table.table').find('.total-score').text(sum);
-        };
+
         const takeSnapshot = () => {
             const snapshot = {
                 'uuid': this._uuid(),
@@ -65,6 +60,7 @@ class App {
             history.pushState(null,null,'#'+encodedString);
         };
         this.scoreGroup.forEach(v => {
+            const self = this;
             $(`.${v}`).on('click', function(){
                 const isSelected = $(this).hasClass('selected');
                 $(`.${v}`).removeClass('selected');
@@ -72,11 +68,22 @@ class App {
                 if (!isSelected) {
                     $(this).addClass('selected');
                 }
-                recalculateTotalScore();
+                self._recalculateTotalScore($(this).parents('table.table'));
                 takeSnapshot();
             });
         });
     }
+
+    _recalculateTotalScore(table) {
+        if (!table) {
+            table = $(`.tab-pane.active.show > table.table`);
+        }
+        let sum = 0;
+        $(table).find('[class^="score-"].selected').each(function () {
+            sum += parseInt($(this).text(), 10);
+        });
+        $(table).find('.total-score').text(sum);
+    };
 
     _uuid() {
         let d = Date.now();
